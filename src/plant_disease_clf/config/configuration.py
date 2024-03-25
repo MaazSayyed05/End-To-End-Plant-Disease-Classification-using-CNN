@@ -8,6 +8,7 @@ from plant_disease_clf.logger import logging
 from plant_disease_clf.exception import CustomException
 
 from plant_disease_clf.entity import DataIngestionConfig
+from plant_disease_clf.entity import PrepareBaseModelConfig
 
 
 class ConfigManager:
@@ -24,5 +25,27 @@ class ConfigManager:
 
         self.config = self.config.data_ingestion
         return DataIngestionConfig(
-            root_dir=self.config.root_dir, kaggle_URL=self.config.kaggle_URL, kaggle_file = self.config.kaggle_file
+            root_dir=self.config.root_dir,
+            kaggle_URL=self.config.kaggle_URL,
+            kaggle_file=self.config.kaggle_file,
+        )
+
+    def get_prepare_base_model_config(self) -> PrepareBaseModelConfig:
+
+        self.config = self.config.base_model
+        self.params = self.params.resnet50
+
+        create_directories([self.config.root_dir])
+
+        return PrepareBaseModelConfig(
+            root_dir=self.config.root_dir,
+            base_model_path=self.config.base_model_path,
+            updated_model_path=self.config.updated_model_path,
+            INCLUDE_TOP=self.params.INCLUDE_TOP,
+            INPUT_SHAPE=self.params.INPUT_SHAPE,
+            WEIGHTS=self.params.WEIGHTS,
+            CLASSES=self.params.CLASSES,
+            LOSS=self.params.LOSS,
+            METRICS=self.params.METRICS,
+            OPTIMIZER=self.params.OPTIMIZER,
         )

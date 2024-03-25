@@ -1,5 +1,5 @@
 End-To-End Plant Disease Classification Project using CNN
-VGG-19 and ResNet-50
+ResNet-50
 20 Classes (5 types of plants).
 ** Here, we will take 2100 images for each class.
 

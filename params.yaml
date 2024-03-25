@@ -1,3 +1,15 @@
 
 key: value
 
+resnet50:
+  INCLUDE_TOP: false
+  INPUT_SHAPE: [224, 224, 3]
+  WEIGHTS: 'imagenet'
+  CLASSES: 20
+  LOSS: 'categorical_crossentropy'
+  METRICS: ['accuracy']
+  OPTIMIZER: 'adam'
+  
+
+
+
