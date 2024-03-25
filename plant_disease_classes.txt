@@ -1,0 +1,39 @@
+20 classes 
+5 types of plants 
+1. Apple {
+	Apple Scab
+	Apple Black Rot
+	Apple Cedar Rust
+	Apple Healthy
+	}
+
+2. Corn{
+	Blight in corn
+	Gray leaf spot 	
+	Corn Healthy
+	}
+
+
+3. Tomato {
+	Tomato Bacterial spot 
+	Tomato Early blight 
+	Tomato Late blight 
+	Tomato Septoria leaf spot 
+	Tomato healthy 
+	Tomato Mosaic Virus
+
+}
+
+
+4. Potato{
+	Potato Early Blight
+	Potato Late Blight
+	Potato Healthy
+}
+
+5. Grape {
+	Black Rot
+	Black Measles
+	Leaf Blight Isariopsis leaf spot
+	grape healthy
+}
