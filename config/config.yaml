@@ -1,0 +1,11 @@
+
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  kaggle_URL: https://www.kaggle.com/datasets/muhammadmaazsayyed/plant-disease-balanced/download?datasetVersionNumber=1
+  kaggle_file: artifacts/data_ingestion/plant-disease-balanced.zip
+  
+
+
+
