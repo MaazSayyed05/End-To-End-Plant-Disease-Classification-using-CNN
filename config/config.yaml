@@ -13,6 +13,11 @@ base_model:
   updated_model_path: artifacts/base_model/updated_model.h5
 
 
+callbacks:
+  root_dir: artifacts/callbacks
+  tensorboard_logs: artifacts/callbacks/tensorboard/logs
+  model_checkpoint: artifacts/callbacks/model_ckpt.h5
+
 
 
 

@@ -23,3 +23,10 @@ class PrepareBaseModelConfig:
     OPTIMIZER: str
     LOSS: str
     METRICS: list
+
+
+@dataclass(frozen=True)
+class PrepareCallbacks:
+    root_dir: Path
+    tensorboard_logs: Path
+    model_checkpoint: Path

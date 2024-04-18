@@ -23,7 +23,7 @@ ResNet-50
 
 		01_data_ingestion.ipynb
 		02_prepare_base_model.ipynb
-		03_prepare_callbacks.ipynb ## (No ned of Pipeline)
+		03_prepare_callbacks.ipynb ## will use directly in model training
 		04_model_training.ipynb
 		05_model_evaluation.ipynb
     

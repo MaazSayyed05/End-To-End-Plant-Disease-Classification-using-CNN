@@ -9,6 +9,7 @@ from plant_disease_clf.exception import CustomException
 
 from plant_disease_clf.entity import DataIngestionConfig
 from plant_disease_clf.entity import PrepareBaseModelConfig
+from plant_disease_clf.entity import PrepareCallbacks
 
 
 class ConfigManager:
@@ -48,4 +49,13 @@ class ConfigManager:
             LOSS=self.params.LOSS,
             METRICS=self.params.METRICS,
             OPTIMIZER=self.params.OPTIMIZER,
+        )
+
+    def get_prepare_callbacks_config(self):
+        self.config = self.config.callbacks
+
+        return PrepareCallbacks(
+            root_dir=self.config.root_dir,
+            tensorboard_logs=self.config.tensorboard_logs,
+            model_checkpoint=self.config.model_checkpoint,
         )
