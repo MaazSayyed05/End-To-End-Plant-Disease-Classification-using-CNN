@@ -19,6 +19,15 @@ callbacks:
   model_checkpoint: artifacts/callbacks/model_ckpt.h5
 
 
+model_training:
+  root_dir: artifacts/model_training
+  model_path: artifacts/model_training/model.h5
+  model_metrics_path: artifacts/model_training/model_metrics.json
+  data: artifacts/data_ingestion/plant_disease_balanced
+  updated_model_path: artifacts/base_model/updated_model.h5
+
+
+
 
 
 

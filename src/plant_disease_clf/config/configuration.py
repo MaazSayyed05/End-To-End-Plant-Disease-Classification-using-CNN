@@ -53,6 +53,7 @@ class ConfigManager:
 
     def get_prepare_callbacks_config(self):
         self.config = self.config.callbacks
+        create_directories([self.config.root_dir])
 
         return PrepareCallbacks(
             root_dir=self.config.root_dir,

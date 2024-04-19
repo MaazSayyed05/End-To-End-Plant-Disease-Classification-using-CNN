@@ -1,15 +1,32 @@
 
 key: value
 
+# train_data_set.class_indices
+
 resnet50:
   INCLUDE_TOP: false
-  INPUT_SHAPE: [224, 224, 3]
+  INPUT_SHAPE: [224, 224]
   WEIGHTS: 'imagenet'
   CLASSES: 20
   LOSS: 'categorical_crossentropy'
   METRICS: ['accuracy']
   OPTIMIZER: 'adam'
-  
+  BATCH_SIZE: 32
+  SHUFFLE: true
+  VALIDATION_SPLIT: 0.20
+  SUBSET: 'both'
+  LABEL_MODEL: 'categorical'
+  EPOCHS: 2
+
+
+
+# train:
+#   BATCH_SIZE: 32
+#   IMAGE_SIZE: [224, 224]
+#   SHUFFLE: true
+#   VALIDATION_SPLIT: 0.20
+#   SUBSET: 'both'
+#   LABEL_MODEL: 'int'
 
 
 
