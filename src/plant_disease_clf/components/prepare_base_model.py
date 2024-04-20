@@ -24,7 +24,7 @@ class PrepareBaseModel:
             # INPUT_SHAPE = self.config.INPUT_SHAPE + [3]
             model = ResNet50(
                 include_top=self.config.INCLUDE_TOP,
-                input_shape=self.config.INPUT_SHAPE + [3],
+                input_shape=self.config.INPUT_SHAPE,
                 weights=self.config.WEIGHTS,
             )
 
