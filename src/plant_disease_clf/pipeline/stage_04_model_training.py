@@ -16,8 +16,11 @@ class TrainingPipeline:
         try:
             config_manager = ConfigManager()
             config = config_manager.get_model_training_config()
-            model_training = ModelTraining(config)
-            model_training.train()
+            training = ModelTraining(config)
+            training.get_updated_base_model()
+            # training.train_valid_generator()
+            training.get_data()
+            training.train()
 
         except Exception as e:
             raise CustomException(e,sys)
