@@ -10,6 +10,7 @@ from plant_disease_clf.exception import CustomException
 from plant_disease_clf.entity import DataIngestionConfig
 from plant_disease_clf.entity import PrepareBaseModelConfig
 from plant_disease_clf.entity import PrepareCallbacks
+from plant_disease_clf.entity import Training
 
 
 class ConfigManager:
@@ -59,4 +60,26 @@ class ConfigManager:
             root_dir=self.config.root_dir,
             tensorboard_logs=self.config.tensorboard_logs,
             model_checkpoint=self.config.model_checkpoint,
+        )
+
+    def get_model_training_config(self):
+
+        self.config = self.config.model_training
+        self.params = self.params.resnet50
+
+        create_directories([self.config.root_dir])
+
+        return Training(
+            root_dir=Path(self.config.root_dir),
+            model_path=Path(self.config.model_path),
+            model_metrics_path=Path(self.config.model_metrics_path),
+            data=Path(self.config.data),
+            updated_model_path=Path(self.config.updated_model_path),
+            INPUT_SHAPE=self.params.INPUT_SHAPE,
+            BATCH_SIZE=self.params.BATCH_SIZE,
+            SHUFFLE=self.params.SHUFFLE,
+            VALIDATION_SPLIT=self.params.VALIDATION_SPLIT,
+            LABEL_MODEL=self.params.LABEL_MODEL,
+            EPOCHS=self.params.EPOCHS,
+            AUGMENTED=self.params.AUGMENTED,
         )
